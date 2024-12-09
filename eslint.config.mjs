@@ -3,7 +3,8 @@ import globals from "globals";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  {languageOptions: { globals: globals.browser }},
+  {languageOptions: { globals: globals.browser }}, 
+  // js.configs.recommended,
   {
     rules: {
         "no-unused-vars": "warn",
@@ -19,7 +20,7 @@ export default [
         "no-const-assign": "error", // запрет на изменение константы
         "no-constant-condition": "error", // запрет на константу в условии
         "no-control-regex": "error", // запрет на упр.символы в регулярках (ASCII от 0 до 31)
-        "no-debugger": "error", // запрет на использование debugger
+        "no-debugger": "warn", // запрет на использование debugger
         "no-delete-var": "error", // запрет на использование delete с переменной
         "no-dupe-args": "error", // запрет одинаковых параметров в объявлений ф-ции
         "no-dupe-class-members": "error", // запрет повторяющихся членов класса
@@ -68,7 +69,31 @@ export default [
         "no-with": "error", // запрет использования with
         "require-yield": "error", // требовать yield для функции-генератора
         "use-isnan": "error", // требовать isNaN() для проверки NaN
-        "valid-typeof": "error" // требовать для typeof допустимых строк "string", "undefined", "object"
+        "valid-typeof": "error", // требовать для typeof допустимых строк "string", "undefined", "object"
+        "linebreak-style": ["error", "unix"], // символ(ы) конца строки
+        "quotes": ["error", "single"], // использовать одинарные кавычки
+        "semi": ["error", "never"], // точка с запятой в конце операторов
+        "indent": ["error", 4, { "SwitchCase": 1 }], // отступы в коде из 4 пробелов с учетом switch...case
+        "arrow-parens": ["error", "as-needed"], // скобки вокруг единственного параметра стрелочной функции
+        "object-curly-spacing": ["error", "always"], // пробелы между скобками в литералах объектов
+        "array-bracket-spacing": ["error", "never"], // пробелы между скобками в массивах
+        "quote-props": ["error", "as-needed"], // свойства объекта в кавычках или без кавычек
+        "no-trailing-spaces": "error", // не должно быть пробелов в конце строки
+        "no-tabs": "error", // символы табуляции в коде запрещена везде
+        "comma-dangle": ["error", { // запятая после последнего элемента массива или объекта
+            "arrays": "always-multiline",
+            "objects": "always-multiline",
+            "imports": "never",
+            "exports": "never",
+            "functions": "never"
+        }],
+        "brace-style": ["error", "1tbs"], // правила для фигурных скобкок для блоков кода
+        "keyword-spacing": "error", // пробел слева и справа для ключевых слов
+        "no-multi-spaces": "error", // не допускается несколько пробелов подряд
+        "eqeqeq": "error", // использовать === и !== вместо == и !=
+        "camelcase": "error", // имена переменных и функций в стиле camelCase
+        "max-len": ["error", 100], // максимальная длина строки
+        "no-multiple-empty-lines": "error" // не больше 2 пустых строк подряд
     }
 }
 ];
